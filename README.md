@@ -6,4 +6,3 @@ belum beres
 - PHP
 - Python
 - Dokumentasi
-'''
