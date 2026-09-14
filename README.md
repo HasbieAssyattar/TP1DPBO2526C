@@ -1,4 +1,9 @@
 # TP1 DPBO
 belum beres
 ```rescript
-anu
+- Komentar cpp
+- Java
+- PHP
+- Python
+- Dokumentasi
+'''
