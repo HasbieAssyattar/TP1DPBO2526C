@@ -3,27 +3,27 @@
 
 using namespace std; // ini biar singkat gausah ngetik std::cout << a std::endl;\
 
-vector<Tiket> daftarTiket;
+vector<Tiket> daftarTiket;  //buat list buat tiket
 
-bool CekId(const string& id) {
-  for (int i = 0; i < daftarTiket.size(); i++) {
-    if (daftarTiket[i].GetID() == id) {
-      return true;
+bool CekId(const string& id) {  //bikin boolean untuk cek id
+  for (int i = 0; i < daftarTiket.size(); i++) {  // dia ngeloop list
+    if (daftarTiket[i].GetID() == id) { //kalo ternyata ada id di daftar tiket
+      return true;  //dia bilang true ada di tike
     }
   }
-  return false;
+  return false; // kalo ternyata gaada retun false
 }
 
 // Tambah Barang
-void tambahTiket() {
-  string id;
-  string nama;
-  int jumlah;
-  double harga;
+void tambahTiket() {  //buat method tambah tiket
+  string id;  //buat atribut? id
+  string nama;  //nama
+  int jumlah; //jumlah
+  double harga; //harga
 
   // input id
-  do {
-    cout << "ID : ";
+  do {  //dia  bakal loop minta masukin ID, kalo udah ada suruh ganti id
+    cout << "ID : ";  
     cin >> id;
     if (CekId(id)) {
       cout << "ID udah ada ey, ganti!" << endl;
@@ -39,7 +39,7 @@ void tambahTiket() {
     cout << "Jumlah : ";
     cin >> jumlah;
 
-    if (jumlah <= 0) {
+    if (jumlah <= 0) {  //ini anuan biar ga anuan
       cout << "jumlah tidak boleh dibawah 0" << endl;
     }
   } while (jumlah <= 0);
@@ -50,7 +50,7 @@ void tambahTiket() {
     cin >> harga;
 
     if (harga <= 0) {
-      cout << "itu harga apa utang kok mines" << endl;
+      cout << "itu harga apa utang kok mines" << endl;  //gaboleh mines ini anuanya
     }
   } while (harga <= 0);
 
@@ -58,18 +58,18 @@ void tambahTiket() {
   cout << "Tiket berhasil ditambahkan!" << endl;
 }
 
-void updateTiket() {
+void updateTiket() {  //metod bnuiat update tiket
   string id;
   cout << "Masukkan id yang mau diubah : ";
   cin >> id;
 
-  for (auto &i : daftarTiket) {
-    if (i.GetID() == id) {
+  for (auto &i : daftarTiket) { //ini lupp dafaterikte
+    if (i.GetID() == id) {  //kalo ada ide
       string nama;
       int jumlah;
       double harga;
 
-      cout << "Masukkan Nama Baru : ";
+      cout << "Masukkan Nama Baru : ";  //masukan nama baru
       getline(cin >> ws, nama);
       i.SetNama(nama);
 
@@ -79,7 +79,7 @@ void updateTiket() {
 
       cout << "Masukkan Harga Baru : ";
       cin >> harga;
-      i.SetHarga(harga);
+      i.SetHarga(harga);  //p[ush]
 
       cout << "Tiket berhasil diupdate!" << endl;
       return;
@@ -94,9 +94,9 @@ void hapusTiket() {
   cout << "ID Tiket yang ingin dihapus : ";
   cin >> id;
 
-  for (auto it = daftarTiket.begin(); it != daftarTiket.end(); ++it) {
-    if (it->GetID() == id) {
-      daftarTiket.erase(it);
+  for (auto it = daftarTiket.begin(); it != daftarTiket.end(); ++it) {//loop dari awl dan akhir
+    if (it->GetID() == id) {  //kao ada
+      daftarTiket.erase(it);  //apus dr list
       cout << "Data berhasil dihapus" << endl;
       return;
     }
@@ -104,15 +104,15 @@ void hapusTiket() {
   cout << "Data tidak ditemukan" << endl;
 }
 
-void cariTiket() {
+void cariTiket() {  //cari
   string id;
 
   cout << "ID Tiket yang ingin dicari : ";
   cin >> id;
 
-  for (const auto &i : daftarTiket) {
-    if (i.GetID() == id) {
-      cout << "\nData ditemukan!" << endl;
+  for (const auto &i : daftarTiket) { // ini loop terus
+    if (i.GetID() == id) {  //aklo ada
+      cout << "\nData ditemukan!" << endl;  //ritn
       cout << "ID     : " << i.GetID() << endl;
       cout << "Nama   : " << i.GetNama() << endl;
       cout << "Jumlah : " << i.GetJumlah() << endl;
@@ -123,7 +123,7 @@ void cariTiket() {
   cout << "ID gaada loh... pastiin ulang" << endl;
 }
 
-void tampilSemua() {
+void tampilSemua() {  //nampilin semua loop
   cout << "\n=== Data Tiket ===" << endl;
   if (daftarTiket.empty()) {
     cout << "Data masih kosong bro..." << endl;
@@ -135,7 +135,7 @@ void tampilSemua() {
   }
 }
 
-void menuTiket() {
+void menuTiket() {  //ini tampilan tiket
   cout << "\n========================" << endl;
   cout << "Masukkan menu : " << endl;
   cout << "1. Tambah Tiket" << endl;
@@ -148,12 +148,12 @@ void menuTiket() {
   cout << "Pilihan : ";
 }
 
-int main() {
-  int pilihan;
+int main() {  ///ini main tau lah gimana
+  int pilihan;  //pilihan
   do {
-    menuTiket();
-    cin >> pilihan;
-    switch (pilihan) {
+    menuTiket();//nampin
+    cin >> pilihan; //pklilhan
+    switch (pilihan) {  //scitch
     case 1:
       tambahTiket();
       break;
@@ -176,6 +176,6 @@ int main() {
     default:
       cout << "Pilihan tidak ada!" << endl;
     }
-  } while (pilihan != 6);
+  } while (pilihan != 6); //done
   return 0;
 }
