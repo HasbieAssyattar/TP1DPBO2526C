@@ -1,9 +1,7 @@
 # TP1 DPBO
 
 ```rescript
-cpp done java setengah
-- Java Main + Komentar
+cpp, python, java done
 - PHP
-- Python
 - Dokumentasi
 ```

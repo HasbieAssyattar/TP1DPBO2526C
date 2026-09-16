@@ -41,12 +41,12 @@ public class Tiket {
         this.harga_tiket = harga_tiket;
     }
     
-    void ShowData(){
-            System.out.println("------------------------" + getId());
-            System.out.println("ID Tiket   : " + getNama());
-            System.out.println("Nama Tiket : " + getStok());
-            System.out.println("Jumlah     : " + getStok());
-            System.out.println("Harga      : %.0f\n",getHarga());
-        }
+    public void ShowData(){
+        System.out.println("------------------------");
+        System.out.println("ID Tiket   : " + getId());
+        System.out.println("Nama Tiket : " + getNama());
+        System.out.println("Jumlah     : " + getJumlah());
+        System.out.printf("Harga      : %.0f\n", getHarga());
+    }
     
 }
