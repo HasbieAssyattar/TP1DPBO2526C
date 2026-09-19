@@ -41,6 +41,7 @@ public class Tiket {
         this.harga_tiket = harga_tiket;
     }
     
+    //buat nampilin data
     public void ShowData(){
         System.out.println("------------------------");
         System.out.println("ID Tiket   : " + getId());

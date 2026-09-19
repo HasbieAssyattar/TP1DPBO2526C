@@ -7,7 +7,7 @@ def CekId(id_tiket):
     for i in daftarTiket:
         if i.GetId() == id_tiket:
             return True
-    return False
+    return False    
 
 def tambahTiket():
     while True:
